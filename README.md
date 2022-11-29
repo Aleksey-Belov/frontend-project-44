@@ -7,4 +7,4 @@
 Play demo
 
 Definition of an even number
-<script id="asciicast-p2N6ruMWMXdUe4EBJofnxhEzp" src="https://asciinema.org/a/p2N6ruMWMXdUe4EBJofnxhEzp.js" async></script>
+<a href="https://asciinema.org/a/p2N6ruMWMXdUe4EBJofnxhEzp" target="_blank"><img src="https://asciinema.org/a/p2N6ruMWMXdUe4EBJofnxhEzp.svg" /></a>
