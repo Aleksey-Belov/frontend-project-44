@@ -4,7 +4,7 @@ import { requestName, conditionCheck } from '../src/index.js';
 import {
   messageWithRules,
   functionMaterial,
-} from '../games/brain-even-games.js';
+} from '../games/brain-calс-games.js';
 
 requestName();
 conditionCheck(messageWithRules, functionMaterial);
