@@ -2,8 +2,7 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "bin": {
-    "brain-games": "bin/brain-games.js",
-    "brain-even": "bin/brain-even.js"
+    "brain-games": "bin/brain-games.js"
   },
   "type": "module",
   "description": "[![Actions Status](https://github.com/Aleksey-Belov/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Aleksey-Belov/frontend-project-44/actions)",
@@ -20,13 +19,5 @@
   "bugs": {
     "url": "https://github.com/Aleksey-Belov/frontend-project-44/issues"
   },
-  "homepage": "https://github.com/Aleksey-Belov/frontend-project-44#readme",
-  "dependencies": {
-    "readline-sync": "^1.4.10"
-  },
-  "devDependencies": {
-    "eslint": "^8.28.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.26.0"
-  }
+  "homepage": "https://github.com/Aleksey-Belov/frontend-project-44#readme"
 }
