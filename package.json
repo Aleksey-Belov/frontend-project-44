@@ -2,7 +2,13 @@
   "name": "@hexlet/code",
   "version": "1.0.0",
   "bin": {
+<<<<<<< HEAD
     "brain-games": "bin/brain-games.js"
+=======
+    "brain-games": "bin/brain-games.js",
+    "brain-even": "bin/brain-even.js",
+    "brain-calc": "bin/brain-calc.js"
+>>>>>>> parent of 8330f01 (add brain-gcd, brain-prime, brain-progression)
   },
   "type": "module",
   "description": "[![Actions Status](https://github.com/Aleksey-Belov/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/Aleksey-Belov/frontend-project-44/actions)",
