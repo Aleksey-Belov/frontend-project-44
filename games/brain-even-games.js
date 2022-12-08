@@ -1,7 +1,6 @@
 import { getRandomIntInclusive1 } from '../src/index.js';
 
-const messageWithRules =
-  'Answer "yes" if the number is even, otherwise answer "no".';
+const messageWithRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 let resolt3 = ' ';
 

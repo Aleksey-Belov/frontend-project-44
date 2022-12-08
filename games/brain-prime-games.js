@@ -1,7 +1,6 @@
 import { getRandomIntInclusive1 } from '../src/index.js';
 
-const messageWithRules =
-  'Answer "yes" if given number is prime. Otherwise answer "no"';
+const messageWithRules = 'Answer "yes" if given number is prime. Otherwise answer "no"';
 
 const functionMaterial = () => {
   const result3 = getRandomIntInclusive1(1, 20);

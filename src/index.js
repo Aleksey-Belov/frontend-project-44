@@ -31,9 +31,7 @@ const conditionCheck = (messageWithRules, functionMaterial) => {
     ) {
       console.log('Correct!');
     } else {
-      console.log(
-        `'${playerResponse}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${yourName}!`
-      );
+      console.log(`'${playerResponse}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${yourName}!`);
       return;
     }
   }
