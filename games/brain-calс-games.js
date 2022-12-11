@@ -1,32 +1,35 @@
-import { getRandomIntInclusive1 } from '../src/index.js';
+import { getRandomNumber } from '../src/index.js';
 
 const messageWithRules = 'What is the result of the expression?';
+let correctAnswerTask = 0;
+let numericExpression = ' ';
+const arithmeticOperations = ['+', '-', '*'];
+const maxNumber = 20;
+const minNumber = 1;
+const maxRandom = 2;
+const minRandom = 0;
 
-let result = 0;
-let resolt3 = ' ';
+const getDataForTask = () => {
+  const signForExpression = arithmeticOperations[getRandomNumber(minRandom, maxRandom)];
+  const randomNumber1 = getRandomNumber(minNumber, maxNumber);
+  const randomNumber2 = getRandomNumber(minNumber, maxNumber);
 
-const functionMaterial = () => {
-  const arrayOperation = ['+', '-', '*'];
-  const signForExpression = arrayOperation[Math.floor(Math.random() * (2 - 0 + 1)) + 0];
-
-  const randomNumber1 = getRandomIntInclusive1(1, 20);
-  const randomNumber2 = getRandomIntInclusive1(1, 20);
-  resolt3 = `${randomNumber1} ${signForExpression} ${randomNumber2}`;
+  numericExpression = `${randomNumber1} ${signForExpression} ${randomNumber2}`;
 
   switch (signForExpression) {
     case '+':
-      result = randomNumber1 + randomNumber2;
+      correctAnswerTask = randomNumber1 + randomNumber2;
       break;
     case '-':
-      result = randomNumber1 - randomNumber2;
+      correctAnswerTask = randomNumber1 - randomNumber2;
       break;
     case '*':
-      result = randomNumber1 * randomNumber2;
+      correctAnswerTask = randomNumber1 * randomNumber2;
       break;
     default:
-      result = null;
+      correctAnswerTask = null;
   }
-  return [resolt3, result];
+  return [numericExpression, correctAnswerTask];
 };
 
-export { messageWithRules, functionMaterial };
+export { messageWithRules, getDataForTask };

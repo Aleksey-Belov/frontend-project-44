@@ -1,22 +1,26 @@
-import { getRandomIntInclusive1 } from '../src/index.js';
+import { getRandomNumber } from '../src/index.js';
 
 const messageWithRules = 'What number is missing in the progression?';
+const maxLength = 10;
+const minLength = 5;
+const maxStep = 20;
+const minStep = 1;
+const minArrayNumber = 0;
 
-const functionMaterial = () => {
-  const arrayLength = getRandomIntInclusive1(5, 10);
-  const arrayStep = getRandomIntInclusive1(1, 20);
-  const numberFromArray = getRandomIntInclusive1(0, arrayLength - 1);
-  const arrayTask = [];
+const getDataForTask = () => {
+  const arrayLength = getRandomNumber(minLength, maxLength);
+  const arrayStep = getRandomNumber(minStep, maxStep);
+  const numberFromArray = getRandomNumber(minArrayNumber, arrayLength - 1);
+  const numbers = [];
 
-  for (let i = arrayStep; arrayTask.length < arrayLength; i += arrayStep) {
-    arrayTask.push(i);
+  for (let i = arrayStep; numbers.length < arrayLength; i += arrayStep) {
+    numbers.push(i);
   }
-  const result = arrayTask[numberFromArray];
-  arrayTask[numberFromArray] = '..';
+  const hiddenNumber = numbers[numberFromArray];
+  numbers[numberFromArray] = '..';
+  const arrayFinishedProgression = numbers.join(' ');
 
-  const result3 = arrayTask.join(' ');
-
-  return [result3, result];
+  return [arrayFinishedProgression, hiddenNumber];
 };
 
-export { messageWithRules, functionMaterial };
+export { messageWithRules, getDataForTask };

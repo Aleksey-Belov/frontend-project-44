@@ -9,33 +9,35 @@ const requestName = () => {
   return yourName;
 };
 
-function getRandomIntInclusive1(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function getRandomNumber(minNumber, maxNumber) {
+  return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
 }
 
-const conditionCheck = (messageWithRules, functionMaterial) => {
+const numberOfRounds = 2;
+
+const comparisonGameResults = (messageWithRules, getDataForTask) => {
   console.log(messageWithRules);
 
-  for (let i = 0; i <= 2; i += 1) {
-    const values = functionMaterial();
-    const resolt3 = values[0];
-    const result = values[1];
+  for (let i = 0; i <= numberOfRounds; i += 1) {
+    const values = getDataForTask();
+    const jobCondition = values[0];
+    const correctAnswerTask = values[1];
 
-    console.log(`Question: ${resolt3}`);
+    console.log(`Question: ${jobCondition}`);
 
     const playerResponse = readlineSync.question('Your answer: ');
     if (
-      typeof result === 'number'
-        ? result === Number(playerResponse)
-        : result === playerResponse
+      typeof correctAnswerTask === 'number'
+        ? correctAnswerTask === Number(playerResponse)
+        : correctAnswerTask === playerResponse
     ) {
       console.log('Correct!');
     } else {
-      console.log(`'${playerResponse}' is wrong answer ;(. Correct answer was '${result}'.\nLet's try again, ${yourName}!`);
+      console.log(`'${playerResponse}' is wrong answer ;(. Correct answer was '${correctAnswerTask}'.\nLet's try again, ${yourName}!`);
       return;
     }
   }
   console.log(`Congratulations, ${yourName}!`);
 };
 
-export { requestName, conditionCheck, getRandomIntInclusive1 };
+export { requestName, comparisonGameResults, getRandomNumber };

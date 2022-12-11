@@ -1,18 +1,19 @@
-import { getRandomIntInclusive1 } from '../src/index.js';
+import { getRandomNumber } from '../src/index.js';
 
 const messageWithRules = 'Answer "yes" if the number is even, otherwise answer "no".';
+let correctAnswerTaskParity = ' ';
+const maxNumber = 20;
+const minNumber = 1;
 
-let resolt3 = ' ';
-
-const functionMaterial = () => {
-  const randomNumber = getRandomIntInclusive1(1, 20);
+const getDataForTask = () => {
+  const randomNumber = getRandomNumber(minNumber, maxNumber);
 
   if (randomNumber % 2 === 0) {
-    resolt3 = 'yes';
+    correctAnswerTaskParity = 'yes';
   } else {
-    resolt3 = 'no';
+    correctAnswerTaskParity = 'no';
   }
-  return [randomNumber, resolt3];
+  return [randomNumber, correctAnswerTaskParity];
 };
 
-export { messageWithRules, functionMaterial };
+export { messageWithRules, getDataForTask };
