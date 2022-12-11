@@ -7,20 +7,23 @@
 <h1>Description</h1>
 This project consists of 5 math games:<br>
 
-<b>Brain-even:</b> Player need to answer is the number even or no.<p>
-<b>Brain-calc:</b> Player need to calculate the result of the expression.<p>
-<b>Brain-ghd:</b> Player need to find the greatest common divisor of given numbers.<br>
-<b>Brain-progression:</b> Player need to answer the number, which is missing in the progression.<br>
-<b>Brain-prime:</b> Player need to answer is the number prime or no.<br>
-
+<ul>
+  <li>Brain-even:</b> Player need to answer is the number even or no.</li>
+  <li>Brain-calc:</b> Player need to calculate the result of the expression.</li>
+  <li>Brain-ghd:</b> Player need to find the greatest common divisor of given numbers.</li>
+  <li>Brain-progression:</b> Player need to answer the number, which is missing in the progression.</li>
+  <li>Brain-prime:</b> Player need to answer is the number prime or no.</li>
+</ul>
 All commands (mode names) are entered in the terminal, and you can be in any directory.
 <p>
   
 <h1>Project installation</h1>
-1. Launch the terminal and clone the repository into your home directory git clone <b>github.com:Aleksey-Belov/frontend-project-44.git</b><br>
-2. Go to the cloned repository cd Brain-Games<br>
-3. Run the command make install<br>
-4. Run the command make link (If an error occurs, use sudo)<br>
+<ol>
+  <li>Clone the repository to your home directory <code> git clone github.com:Aleksey-Belov/frontend-project-44.git</code>.</li>
+  <li>Go to directory, use command <code>cd frontend-project-44</code>.</li>
+  <li>Run the command <code>make install</code>.</li>
+  <li>Run the command <code>sudo npm link</code>.</li>
+</ol>
 <p>
   
 <h1>Minimum system requirements</h1>
