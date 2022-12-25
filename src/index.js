@@ -9,9 +9,7 @@ const requestName = () => {
   return yourName;
 };
 
-function getRandomNumber(minNumber, maxNumber) {
-  return Math.floor(Math.random() * (maxNumber - minNumber + 1)) + minNumber;
-}
+const getRandomNum = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
 
 const numberOfRounds = 2;
 
@@ -19,18 +17,12 @@ const comparisonGameResults = (messageWithRules, getDataForTask) => {
   console.log(messageWithRules);
 
   for (let i = 0; i <= numberOfRounds; i += 1) {
-    const values = getDataForTask();
-    const jobCondition = values[0];
-    const correctAnswerTask = values[1];
+    const [jobCondition, correctAnswerTask] = getDataForTask();
 
     console.log(`Question: ${jobCondition}`);
 
     const playerResponse = readlineSync.question('Your answer: ');
-    if (
-      typeof correctAnswerTask === 'number'
-        ? correctAnswerTask === Number(playerResponse)
-        : correctAnswerTask === playerResponse
-    ) {
+    if (correctAnswerTask === playerResponse) {
       console.log('Correct!');
     } else {
       console.log(`'${playerResponse}' is wrong answer ;(. Correct answer was '${correctAnswerTask}'.\nLet's try again, ${yourName}!`);
@@ -40,4 +32,4 @@ const comparisonGameResults = (messageWithRules, getDataForTask) => {
   console.log(`Congratulations, ${yourName}!`);
 };
 
-export { requestName, comparisonGameResults, getRandomNumber };
+export { requestName, comparisonGameResults, getRandomNum };
