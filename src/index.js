@@ -1,19 +1,11 @@
 import readlineSync from 'readline-sync';
 
-let yourName = '';
+const getGameResults = (messageWithRules, getDataForTask) => {
+  const numberOfRounds = 2;
 
-const requestName = () => {
   console.log('Welcome to the Brain Games!');
-  yourName = readlineSync.question('May I have your name? ');
+  const yourName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${yourName}!`);
-  return yourName;
-};
-
-const getRandomNum = (minNum, maxNum) => Math.floor(Math.random() * (maxNum - minNum + 1)) + minNum;
-
-const numberOfRounds = 2;
-
-const comparisonGameResults = (messageWithRules, getDataForTask) => {
   console.log(messageWithRules);
 
   for (let i = 0; i <= numberOfRounds; i += 1) {
@@ -32,4 +24,4 @@ const comparisonGameResults = (messageWithRules, getDataForTask) => {
   console.log(`Congratulations, ${yourName}!`);
 };
 
-export { requestName, comparisonGameResults, getRandomNum };
+export default getGameResults;

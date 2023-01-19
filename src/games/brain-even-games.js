@@ -1,28 +1,20 @@
-import { getRandomNum, requestName, comparisonGameResults } from '../index.js';
+import getGameResults from '../index.js';
+import { getRandomNum } from '../utils.js';
 
 const messageWithRules = 'Answer "yes" if the number is even, otherwise answer "no".';
 const maxNumber = 20;
 const minNumber = 1;
 
-const getParityNumber = (randomNumber) => {
-  let correctAnswerTaskParity = ' ';
-  if (randomNumber % 2 === 0) {
-    correctAnswerTaskParity = 'yes';
-  } else {
-    correctAnswerTaskParity = 'no';
-  }
-  return correctAnswerTaskParity;
-};
+const isParityNumber = (randomNumber) => randomNumber % 2 === 0;
 
 const getDataForTask = () => {
   const randomNumber = getRandomNum(minNumber, maxNumber);
-  const testResult = getParityNumber(randomNumber);
-  return [randomNumber, testResult];
+  const correctAnswerTaskParity = isParityNumber(randomNumber) ? 'yes' : 'no';
+  return [randomNumber, correctAnswerTaskParity];
 };
 
 const launchProjectBrainEven = () => {
-  requestName();
-  comparisonGameResults(messageWithRules, getDataForTask);
+  getGameResults(messageWithRules, getDataForTask);
 };
 
 export default launchProjectBrainEven;

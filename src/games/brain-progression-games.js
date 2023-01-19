@@ -1,4 +1,5 @@
-import { getRandomNum, requestName, comparisonGameResults } from '../index.js';
+import getGameResults from '../index.js';
+import { getRandomNum } from '../utils.js';
 
 const messageWithRules = 'What number is missing in the progression?';
 const maxLength = 10;
@@ -30,8 +31,7 @@ const getDataForTask = () => {
 };
 
 const launchProjectBrainProgression = () => {
-  requestName();
-  comparisonGameResults(messageWithRules, getDataForTask);
+  getGameResults(messageWithRules, getDataForTask);
 };
 
 export default launchProjectBrainProgression;

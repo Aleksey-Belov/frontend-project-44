@@ -1,50 +1,35 @@
-import { getRandomNum, requestName, comparisonGameResults } from '../index.js';
+import getGameResults from '../index.js';
+import { getRandomNum, getRandomInt } from '../utils.js';
 
 const messageWithRules = 'What is the result of the expression?';
 const arithmeticOperations = ['+', '-', '*'];
 const maxNumber = 20;
 const minNumber = 1;
-const maxRandom = 2;
-const minRandom = 0;
 
 const getArithmeticOperation = (signForExpression, randomNumber1, randomNumber2) => {
-  let correctAnswerTask = 0;
   switch (signForExpression) {
     case '+':
-      correctAnswerTask = randomNumber1 + randomNumber2;
-      break;
+      return randomNumber1 + randomNumber2;
     case '-':
-      correctAnswerTask = randomNumber1 - randomNumber2;
-      break;
+      return randomNumber1 - randomNumber2;
     case '*':
-      correctAnswerTask = randomNumber1 * randomNumber2;
-      break;
+      return randomNumber1 * randomNumber2;
     default:
-      correctAnswerTask = null;
-      console.log('Error, no such arithmetic operation was found');
+      throw new Error(`Unknown arithmetic operator "${signForExpression}"!`);
   }
-  return correctAnswerTask;
 };
 
 const getDataForTask = () => {
-  let numericExpression = ' ';
-
-  const signForExpression = arithmeticOperations[getRandomNum(minRandom, maxRandom)];
+  const signForExpression = arithmeticOperations[getRandomInt(arithmeticOperations.length)];
   const randomNumber1 = getRandomNum(minNumber, maxNumber);
   const randomNumber2 = getRandomNum(minNumber, maxNumber);
-
-  numericExpression = `${randomNumber1} ${signForExpression} ${randomNumber2}`;
-  const arithmeticOperationResult = getArithmeticOperation(
-    signForExpression,
-    randomNumber1,
-    randomNumber2,
-  );
-  return [numericExpression, String(arithmeticOperationResult)];
+  const numericExpression = `${randomNumber1} ${signForExpression} ${randomNumber2}`;
+  const arithmeticResult = getArithmeticOperation(signForExpression, randomNumber1, randomNumber2);
+  return [numericExpression, String(arithmeticResult)];
 };
 
 const launchProjectBrainCalс = () => {
-  requestName();
-  comparisonGameResults(messageWithRules, getDataForTask);
+  getGameResults(messageWithRules, getDataForTask);
 };
 
 export default launchProjectBrainCalс;
